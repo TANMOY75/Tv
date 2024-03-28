@@ -1,25 +1,28 @@
-    <!DOCTYPE html>
-    <html>
-    <head>
-    <meta charset=utf-8 />
+   <!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
     <title>IPL 4K</title>
-      
-    
-      <link href="https://unpkg.com/video.js/dist/video-js.css" rel="stylesheet">
-      <script src="https://unpkg.com/video.js/dist/video.js"></script>
-      <script src="https://unpkg.com/videojs-contrib-hls/dist/videojs-contrib-hls.js"></script>
-       
-    </head>
-    <body>
-      <video id="my_video_1" class="video-js vjs-fluid vjs-default-skin" controls preload="auto"
-      data-setup='{}'>
-        <source src="https://prod-ent-live-gm.jiocinema.com/hls/live/2100322/uhd_akamai_ctv_avc_hin_ipl_s1_m1280324/master.m3u8" type="application/x-mpegURL">
-      </video>
-      
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="/path/to/ui.css" />
+  </head>
+  <body>
+    <div class="theoplayer-container video-js theoplayer-skin vjs-16-9"></div>
+    <script src="/path/to/THEOplayer.js"></script>
     <script>
-    var player = videojs('my_video_1');
-    player.play();
+      var element = document.querySelector(".theoplayer-container");
+      var player = new THEOplayer.Player(element, {
+        libraryLocation: "/path/to/your-theoplayer-folder/",
+        license: "your_license_string"
+      });
+      player.source = {
+        sources: [
+          {
+            src: "https://prod-ent-live-gm.jiocinema.com/hls/live/2100322/uhd_akamai_ctv_avc_hin_ipl_s1_m1280324/master.m3u8",
+            type: "application/x-mpegurl"
+          }
+        ]
+      };
     </script>
-      
-    </body>
-    </html>
+  </body>
+</html>
