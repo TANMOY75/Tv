@@ -20,8 +20,20 @@
     </video>
   </div>
 
-<link rel="stylesheet" href="https://cdn.plyr.io/3.4.7/plyr.css" />
-
+<style type="text/css">
+	#container {
+  max-width: 400px;
+  position: relative;
+}
+#container span {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  background-color: #ffffff;
+  padding: 10px 20px;
+  z-index: 1;
+}
+</style>
 <script type="text/javascript">
 	document.addEventListener("DOMContentLoaded", () => {
   const video = document.querySelector("video");
