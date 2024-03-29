@@ -1,28 +1,33 @@
-   <!doctype html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <title>IPL 4K</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="/path/to/ui.css" />
+   
   </head>
   <body>
-    <div class="theoplayer-container video-js theoplayer-skin vjs-16-9"></div>
-    <script src="/path/to/THEOplayer.js"></script>
-    <script>
-      var element = document.querySelector(".theoplayer-container");
-      var player = new THEOplayer.Player(element, {
-        libraryLocation: "/path/to/your-theoplayer-folder/",
-        license: "your_license_string"
-      });
-      player.source = {
-        sources: [
-          {
-            src: "https://prod-ent-live-gm.jiocinema.com/hls/live/2100322/uhd_akamai_ctv_avc_hin_ipl_s1_m1280324/master.m3u8",
-            type: "application/x-mpegurl"
-          }
-        ]
-      };
-    </script>
+    <video class="op-player__media" id="video" controls playsinline>
+            <source src="https://prod-ent-live-gm.jiocinema.com/hls/live/2100322/uhd_akamai_ctv_avc_hin_ipl_s1_m1280324/master.m3u8"></video>
+     <script>
+        const player = new OpenPlayerJS('video', {
+  controls: {
+    layers: {
+       right: ['settings', 'levels', 'fullscreen']
+    }
+  },
+  hls: {
+    startLevel: -1,
+    enableWorker: true,
+    widevineLicenseUrl: 'https://cwip-shaka-proxy.appspot.com/no_auth',
+    emeEnabled: true,
+  }
+});
+player.init();
+player.getElement().addEventListener('hlsLevelLoaded', (e, data) => {
+  console.log(e, data);
+})
+     </script>
+    
+   
   </body>
 </html>
