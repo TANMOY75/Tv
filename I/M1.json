@@ -6,7 +6,26 @@
         "id": "HINDI",
         "link": "https://prod-ent-live-gm.jiocinema.com/hls/live/2100323/hd_akamai_androidmob_avc_hin_ipl_s1_m1310324/master.m3u8",
         "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36"
-}, 
+},
+
+   
+   {
+          "logo": "https://v3img.voot.com/resizeMedium,w_1090,h_613/v3Storage/assets/ipl_lsg_vs_pbks_carousel-1711760266335.jpg",
+        "name": "Astro",
+        "id": "ASTRO",
+        "link": {
+					"default": false,
+					"type": "mpd",
+					"file": "https://linearjitp02-playback.astro.com.my/dash-wv/linear/2504/default.mpd",
+					"drm": {
+						"clearkey": {
+							"key": "cd84ed136b0cc71f8ab8cd4d4f6a2e4c",
+							"keyId": "03c2e0af2f8159f9f0ce9b5dbc865f10"
+						}
+					},
+        "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36"
+},
+
 
    {
           "logo": "https://v3img.voot.com/resizeMedium,w_1090,h_613/v3Storage/assets/ipl_lsg_vs_pbks_carousel-1711760266335.jpg",
