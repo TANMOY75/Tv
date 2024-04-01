@@ -13,7 +13,12 @@
           "logo": "https://v3img.voot.com/resizeMedium,w_1090,h_613/v3Storage/assets/ipl_lsg_vs_pbks_carousel-1711760266335.jpg",
         "name": "Astro",
         "id": "ASTRO",
-        "link": {
+        "link": 
+	"playlist": [
+		{
+			"sources": [
+				null,
+				{
 					"default": false,
 					"type": "mpd",
 					"file": "https://linearjitp02-playback.astro.com.my/dash-wv/linear/2504/default.mpd",
@@ -23,6 +28,24 @@
 							"keyId": "03c2e0af2f8159f9f0ce9b5dbc865f10"
 						}
 					},
+					"label": "1"
+				},
+				{
+					"default": true,
+					"type": "mpd",
+					"file": "https://linearjitp02-playback.astro.com.my/dash-wv/linear/2504/default.mpd",
+					"drm": {
+						"widevine": {},
+						"playready": {}
+					},
+					"label": "2"
+				}
+			]
+		}
+	],
+	"primary": "html5",
+	"hlshtml": true,
+	"autostart": false
         "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36"
 },
 
