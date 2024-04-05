@@ -262,45 +262,7 @@
         "id": "Spider_Cam",
         "link": "https://prod-sports-multiangle-gm.jiocinema.com/hls/live/2109672/hd_akamai_iosmob_avc_cam03_ipl_s1_m1020424/master.m3u8",
         "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36"
-},
-
-   {
-          "logo": "https://upload.wikimedia.org/wikipedia/commons/b/b7/Astro_Cricket.png",
-        "name": "Astro Cricket",
-        "id": "Astro_Cricket",
-        "link": "https://linearjitp02-playback.astro.com.my/dash-wv/linear/2504/default.mpd?|drmScheme=clearkey&drmLicense=https://denver1769.in/TP/key.php?id=824",
-        "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36"
-},
-
-   {
-          "logo": "https://media.info/i/lf/0/1507600280/1134.png",
-        "name": "Sky Sports Cricket",
-        "id": "Sky_Cricket",
-        "link": "https://test.ddnetwork.workers.dev/index.mpd?kid=0009df430980c91904926a291cf321fb&ch=https://linear027-gb-dash1-prd-ll.cdn.skycdp.com/016a/Content/DASH_003_720_30/Live/channel(skysportscricket)/manifest_720.mpd?|drmScheme=clearkey&drmLicense=https://denver1769.in/TP/key.php?id=829",
-        "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36"
-},
-
-    {
-          "logo": "https://i.postimg.cc/k4F8Dkhv/Screenshot-2024-01-15-23-25-24-69-1c337646f29875672b5a61192b9010f9.jpg",
-        "name": "Willow Cricket",
-        "id": "Willow_Cricket",
-        "link": "https://linear-novi.stvacdn.spectrum.com/LIVE/1131/dash/cenc/WLLOHD_10364/manifest.mpd?|drmScheme=clearkey&drmLicense=https://denver1769.in/TP/key.php?id=828",
-        "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36"
-},
-
-      {
-          "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/657978a7c5625a16ee72e958/images/402.webp",
-        "name": "Star Sports 1 HD",
-        "id": "Sports_1",
-        "link": "https://rftv.wtf/tp/tplay.mpd?contentID=78?|drmScheme=clearkey&drmLicense=https://rftv.wtf/tp/tplay.php?contentID=78&key",
-        "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36"
-},
-
-   {
-          "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/657978f46cbc4372820a5bdf/images/237.webp",
-        "name": "Star Sports 1 Hindi HD",
-        "id": "Sports_1_Hindi",
-        "link": "https://rftv.wtf/tp/tplay.mpd?contentID=24?|drmScheme=clearkey&drmLicense=https://rftv.wtf/tp/tplay.php?contentID=24&key",
-        "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36"
 }
+
+   
 ]
