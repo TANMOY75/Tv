@@ -1,8 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
+    <link rel="icon" type="image/png" href="https://em-content.zobj.net/source/apple/391/skull-and-crossbones_2620-fe0f.png" sizes="128x128"
+        style="border-radius: 5px;">
     <title>Sky Action</title>
-<style>
-#jwplayerDiv {
+    <style>
+#player-container {
         position: absolute !important;
         width:100% !important;
         height:100% !important;
@@ -12,32 +19,34 @@
         left: 0px;
     }
 </style>
-<body>
-    <div id="jwplayerDiv"></div>
-    <!--<img class="logo" src="https://mominvaithanks.xyz/mominRocks/as.image" alt="Logo">-->
-     <script src="//content.jwplatform.com/libraries/SAHhwvZq.js"></script>
-    <script type="text/javascript">
-        // Use the PHP configuration directly within the JavaScript
-        var config = {"file":"https://linear034-gb-dash1-prd-ll.cdn.skycdp.com/016a/Content/DASH_003_720_120/Live/channel(skysportsaction)/manifest_720-120.mpd","drm":{"clearkey":{"keyId":"00033f7dcc4fa16f91a862f6d8420902","key":"50cfec3c8d2bf51d41cce44f74781edf"}}};
+    <script src="https://ssl.p.jwpcdn.com/player/v/8.32.1/jwplayer.js" type="text/javascript"></script>
+</head>
 
-        jwplayer("jwplayerDiv").setup({
-           file: config.file,
-            position: 'bottom',
-            autostart: true,
-            stretching: "",
-            width: "100%",
-            height:"100%",
-             drm: {
-                clearkey: {
-                    keyId: config.drm.clearkey.keyId,
-                    key: config.drm.clearkey.key
-                }
-            },
-            type: "dash",
-          
-        });
-    </script>
-    
-    
+<body>
+
+
+    <div id="player-container">
+            <script type="text/javascript">
+                jwplayer.key = 'XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo';
+                var playerInstance = jwplayer("player-container").setup({
+                    file: "https://linear034-gb-dash1-prd-ll.cdn.skycdp.com/016a/Content/DASH_003_720_120/Live/channel(skysportsaction)/manifest_720-120.mpd",
+                    aspectratio: '16:9',
+                    width: '100%',
+                    image: 'https://upload.wikimedia.org/wikipedia/commons/2/2f/Astro_logo_-_Magenta_-_Copy.png',
+                    autostart: true, // Disable autostart initially
+                    captions: { color: 'white', fontSize: '25%', backgroundOpacity: 0 },
+                    "Volume": "50",
+                    "mute": false,
+                    type: "dash",
+                    drm: {
+                        "clearkey": {
+                            "keyId": "00033f7dcc4fa16f91a862f6d8420902",
+                            "key": "50cfec3c8d2bf51d41cce44f74781edf"
+                        }
+                    }
+                });
+            </script>
+    </div>
 </body>
+
 </html>
