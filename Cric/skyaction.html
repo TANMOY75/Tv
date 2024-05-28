@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <title>Sky Action</title>
+<style>
+#jwplayerDiv {
+        position: absolute !important;
+        width:100% !important;
+        height:100% !important;
+        top: 0px;
+        bottom: 0px;
+        right: 0px;
+        left: 0px;
+    }
+</style>
+<body>
+    <div id="jwplayerDiv"></div>
+    <!--<img class="logo" src="https://mominvaithanks.xyz/mominRocks/as.image" alt="Logo">-->
+     <script src="//content.jwplatform.com/libraries/SAHhwvZq.js"></script>
+    <script type="text/javascript">
+        // Use the PHP configuration directly within the JavaScript
+        var config = {"file":"https://linear034-gb-dash1-prd-ll.cdn.skycdp.com/016a/Content/DASH_003_720_120/Live/channel(skysportsaction)/manifest_720-120.mpd","drm":{"clearkey":{"keyId":"00033f7dcc4fa16f91a862f6d8420902","key":"50cfec3c8d2bf51d41cce44f74781edf"}}};
+
+        jwplayer("jwplayerDiv").setup({
+           file: config.file,
+            position: 'bottom',
+            autostart: true,
+            stretching: "",
+            width: "100%",
+            height:"100%",
+             drm: {
+                clearkey: {
+                    keyId: config.drm.clearkey.keyId,
+                    key: config.drm.clearkey.key
+                }
+            },
+            type: "dash",
+          
+        });
+    </script>
+    
+    
+</body>
+</html>
