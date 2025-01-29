@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<title>MIHIR DAS</title>
+<link rel="shortcut icon" type="x-icon" href="https://em-content.zobj.net/source/apple/391/skull-and-crossbones_2620-fe0f.png">
+</head>
+<script type='text/javascript' src='https://content.jwplatform.com/libraries/IDzF9Zmk.js'></script>
+<style>
+#player {
+        position: absolute !important;
+        width:100% !important;
+        height:100% !important;
+        top: 0px;
+        bottom: 0px;
+        right: 0px;
+        left: 0px;
+    }
+</style>
+	<div id="player"></div>
+	<script>
+	
+	jwplayer('player').setup({
+	"playlist": [
+		{
+			"file": "https://dai.google.com/ssai/event/ARSsLLOjSl2bsGjkQB2UAw/master.m3u8"
+		}
+	],
+	"autostart": true,
+    "mute": false,
+    hlsjsConfig: {
+                liveSyncDurationCount: 0,
+            p2pConfig: {
+                // logLevel: true,
+                live: true,        // set to false in VOD mode
+                // token: YOUR_TOKEN
+                // Other p2pConfig options provided by CDNBye
+            }
+        },
+})
+    
+    </script>
+</html>
