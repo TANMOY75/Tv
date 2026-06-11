@@ -3,22 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shaka Player - DASH + ClearKey</title>
+<title>Shaka Player</title>
 
-<!-- Shaka Player -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.7.11/shaka-player.compiled.js"></script>
-
-<!-- Shaka UI -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.7.11/controls.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.7.11/shaka-player.ui.js"></script>
 
 <style>
-html,
-body {
+html, body {
     width: 100%;
     height: 100%;
     margin: 0;
-    padding: 0;
     background: #000;
     overflow: hidden;
 }
@@ -26,26 +21,38 @@ body {
 #video-container {
     width: 100vw;
     height: 100vh;
-    position: relative;
 }
 
 video {
     width: 100%;
     height: 100%;
-    object-fit: contain;
     background: #000;
+}
+
+#status {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: white;
+    background: rgba(0,0,0,.7);
+    padding: 10px;
+    font-family: Arial, sans-serif;
+    z-index: 9999;
+    max-width: 500px;
 }
 </style>
 </head>
 
 <body>
 
+<div id="status">Loading...</div>
+
 <div id="video-container"
-     data-shaka-player-container
-     data-shaka-player-cast-receiver-id="">
+     data-shaka-player-container>
     <video id="video"
            data-shaka-player
            autoplay
+           controls
            playsinline>
     </video>
 </div>
@@ -55,8 +62,10 @@ async function initPlayer() {
 
     shaka.polyfill.installAll();
 
+    const status = document.getElementById("status");
+
     if (!shaka.Player.isBrowserSupported()) {
-        alert("Browser not supported!");
+        status.innerHTML = "Browser not supported";
         return;
     }
 
@@ -67,27 +76,48 @@ async function initPlayer() {
 
     player.addEventListener("error", function(event) {
         console.error("Shaka Error:", event.detail);
-    });
 
-    player.configure({
-        drm: {
-            clearKeys: {
-                "e51aa21f2a0fef9aabc120dfb655b52f":
-                "a12a987fe725a40b6be95cd84b15f689"
-            }
-        }
+        status.innerHTML =
+            "Shaka Error<br>" +
+            "Code: " + event.detail.code +
+            "<br>" +
+            JSON.stringify(event.detail, null, 2);
     });
 
     try {
 
-        await player.load(
-            "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/7janu55dwc/out/v1/69a2a7041395406b970598f61680e7cf/cenc.mpd"
-        );
+        player.configure({
+            drm: {
+                clearKeys: {
+                    "e51aa21f2a0fef9aabc120dfb655b52f":
+                    "a12a987fe725a40b6be95cd84b15f689"
+                }
+            }
+        });
 
-        console.log("Video loaded successfully");
+        const manifest =
+            "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/7janu55dwc/out/v1/69a2a7041395406b970598f61680e7cf/cenc.mpd";
+
+        status.innerHTML = "Loading manifest...";
+
+        await player.load(manifest);
+
+        status.innerHTML = "Loaded successfully";
+
+        try {
+            await video.play();
+        } catch(e) {
+            console.log("Autoplay blocked:", e);
+        }
 
     } catch (error) {
+
         console.error("Load failed:", error);
+
+        status.innerHTML =
+            "Load Failed<br><pre>" +
+            JSON.stringify(error, null, 2) +
+            "</pre>";
     }
 }
 
